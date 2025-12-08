@@ -21,55 +21,61 @@ a:hover { text-decoration: underline; }
    HERO Section(Black top)
 ----------------------------- */
 .hero {
-  background-color: #111111;
-  color: #ffffff;
-  padding: 60px 24px;
-}
-
-.hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 32px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px 0;
+  gap: 40px;
+  border-bottom: 1px solid #333;
 }
 
-.hero-title {
-  font-size: 40px;
-  font-weight: 600;
-  margin: 0 0 16px;
+/* Left text block */
+.hero-text {
+  flex: 2;
 }
 
-.hero-subtitle {
-  font-size: 20px;
-  color: #e8eaed;
-  margin: 0 0 16px;
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.hero-meta {
-  font-size: 14px;
-  color: #bdc1c6;
+.subtitle {
+  font-size: 1.4rem;
+  color: #e0e0e0;
+  max-width: 750px;
+  margin-bottom: 25px;
 }
 
-.hero-image {
-  flex: 1 1 220px;
-  min-width: 200px;
-  background-color: #303134;
-  border-radius: 12px;     
-  padding: 16px;
+.meta {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+/* Right image block */
+.hero-image-right {
+  flex: 1.2;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
-.hero-img {
-  max-width: 100%;   
-  max-height: 100%; 
-  object-fit: contain; 
-  border-radius: 8px; 
+.hero-image-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
+/* Responsive: Stack on small screens */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .hero-image-right {
+    width: 100%;
+  }
 }
 
 /* ----------------------------
