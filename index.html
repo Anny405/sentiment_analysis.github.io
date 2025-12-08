@@ -1,61 +1,212 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Conversational Emotion Recognition Blog</title>
-    <style>
-        body {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        h1, h2, h3 {
-            color: #4B0082;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Conversations Are Long, Emotions Are Subtle</title>
+  <style>
+    /* 基础页面样式 */
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #202124;
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* 顶部黑色 hero 区块 */
+    .hero {
+      background-color: #111111;
+      color: #ffffff;
+      padding: 60px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .hero-text {
+      flex: 2 1 300px;
+    }
+
+    .hero-title {
+      font-size: 40px;
+      font-weight: 600;
+      margin: 0 0 16px;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      font-weight: 400;
+      margin: 0 0 16px;
+      color: #e8eaed;
+    }
+
+    .hero-meta {
+      font-size: 14px;
+      color: #bdc1c6;
+    }
+
+    .hero-image {
+      flex: 1 1 220px;
+      min-width: 200px;
+      background-color: #303134;
+      border-radius: 8px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #e8eaed;
+    }
+
+    /* 主体内容区域：左正文 + 右 quick links */
+    .page {
+      max-width: 1100px;
+      margin: 32px auto 80px;
+      padding: 0 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .content {
+      flex: 3 1 320px;
+      min-width: 0;
+    }
+
+    .sidebar {
+      flex: 1 1 200px;
+      min-width: 200px;
+      font-size: 14px;
+    }
+
+    .sidebar-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+      font-size: 12px;
+      color: #5f6368;
+    }
+
+    .sidebar-link-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 24px;
+    }
+
+    .sidebar-link-list li {
+      margin-bottom: 8px;
+    }
+
+    /* 正文标题样式 */
+    h2 {
+      font-size: 24px;
+      margin-top: 32px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 24px;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    /* 小屏幕时栈式布局 */
+    @media (max-width: 800px) {
+      .hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .page {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div style="text-align:center; padding:60px 20px; background:#f4f0fa; border-radius:16px; margin-bottom:40px;">
-  <h1 style="font-size:40px; margin:0 0 10px; color:#4B0082;">
-    Conversations Are Long, Emotions Are Subtle
-  </h1>
-  <h2 style="font-size:22px; margin:0; color:#333;">
-    How Memory Networks, Transformer-XL, and Emotion Anchors Reshape Conversational Emotion Recognition
-  </h2>
-</div>
-    
-<h1>Conversational Emotion Recognition: From CMN to Hybrid Models</h1>
-<p>Welcome! This is our academic blog for DS-GA 1011.</p>
 
-<h2>1. Introduction</h2>
-<p>Write your blog content here...</p>
+  <!-- 顶部 HERO 区 -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Conversations Are Long, Emotions Are Subtle
+        </h1>
+        <h2 class="hero-subtitle">
+          How Memory Networks, Transformer-XL, and Emotion Anchors Reshape Conversational Emotion Recognition
+        </h2>
+        <div class="hero-meta">
+          DS-GA 1011 · Fall 2025 · Ellie Wang, Georgios Ioannou, Qiya Huang, Ruokai Gu, Ziyu Qi
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- 以后可以放一张小总览图；现在先占位 -->
+        Hybrid model overview · CMN → Transformer-XL → EACL
+      </div>
+    </div>
+  </header>
 
-<h2>2. Background</h2>
-<p>...</p>
+  <!-- 主体内容：左正文 + 右 Quick Links -->
+  <div class="page">
+    <main class="content">
+      <h2>1. Introduction</h2>
+      <p>
+        Conversational emotion recognition goes far beyond assigning a label to a single sentence.
+        In real dialogue, emotions build up over many turns, depend on who is speaking, and often
+        blur the boundary between categories like <i>angry</i> and <i>frustrated</i>.
+        In this post, we revisit three influential ideas—speaker-specific memory networks,
+        long-context transformers, and emotion-anchored contrastive learning—and ask a simple question:
+        how can we combine them to better track subtle emotional dynamics in conversation?
+      </p>
 
-<h2>3. CMN (2018)</h2>
-<p>...</p>
+      <!-- 下面开始填你的大纲各部分内容 -->
+      <h2>2. Problem Setup: Conversational Emotion Recognition</h2>
+      <p>[这里写任务定义、IEMOCAP 数据集等……]</p>
 
-<h2>4. Transformer-XL</h2>
-<p>...</p>
+      <h2>3. Conversational Memory Networks (CMN, 2018)</h2>
+      <p>[这里写 CMN 的介绍……]</p>
 
-<h2>5. EACL (2024)</h2>
-<p>...</p>
+      <!-- 后面继续 4, 5, 6, 7, 8... -->
+    </main>
 
-<h2>6. Hybrid Architecture</h2>
-<p>...</p>
+    <aside class="sidebar">
+      <div class="sidebar-title">QUICK LINKS</div>
+      <ul class="sidebar-link-list">
+        <li><a href="https://github.com/Anny405/ziyuqi.github.io" target="_blank">GitHub Repo</a></li>
+        <li><a href="LINK_TO_POSTER_PDF" target="_blank">Poster (PDF)</a></li>
+        <li><a href="#experiments">Experiments</a></li>
+        <li><a href="#hybrid">Hybrid Model</a></li>
+      </ul>
 
-<h2>7. Experiments</h2>
-<p>...</p>
-
-<h2>8. New Insights</h2>
-<p>...</p>
-
-<h2>9. Conclusion</h2>
-<p>...</p>
+      <div class="sidebar-title">SHARE</div>
+      <p>Copy and share this link:<br>
+        <code>https://anny405.github.io/ziyuqi.github.io/</code>
+      </p>
+    </aside>
+  </div>
 
 </body>
 </html>
-
