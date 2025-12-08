@@ -53,18 +53,12 @@ a:hover { text-decoration: underline; }
 }
 
 .hero-image {
-  flex: 1 1 220px;
-  min-width: 200px;
-  background-color: #303134;
-  border-radius: 8px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #e8eaed;
-  font-size: 13px;
-  object-fit: contain;
   width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
 }
 
 /* ----------------------------
