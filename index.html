@@ -33,20 +33,23 @@
   <div class="page">
     <main class="content">
       <h2>Why conversational emotion is hard</h2>
-      <p> Single-utterance emotion classification is already challenging, but conversational emotion recognition raises the difficulty in several important ways. Emotions in dialogue rarely appear in clean, self-contained sentences. A single utterance like <i>“It’s fine, whatever”</i> can express annoyance, resignation, or genuine agreement—its meaning depends almost entirely on the surrounding context and who said it. </p>
       <p>
-        That said, emotions in conversation rarely surface all at once. They build up over multiple turns, shift with speaker intent, and often blur the boundary between categories like frustration, annoyance, and sadness. Yet many emotion recognition systems still treat each utterance in isolation, largely ignoring the long-range dependencies and speaker-specific cues that shape how emotions emerge in dialogue.
+        Single-utterance emotion classification is already challenging, but conversational emotion recognition raises the difficulty in several important ways. Emotions in dialogue rarely appear in clean, self-contained sentences. A single line like <i>“It’s fine, whatever”</i> might signal annoyance, resignation, or genuine agreement—its meaning depends almost entirely on the surrounding context and the speaker’s intent.
+      </p>      
+      <p>
+        More importantly, emotions in conversation unfold over time. They accumulate across turns, shift gradually, and often blur the boundaries between categories such as frustration, annoyance, and sadness. Yet many existing systems still analyze each utterance in isolation, overlooking the long-range dependencies and speaker-specific patterns that shape how emotions evolve within a dialogue.
+      </p>      
+      <p>
+        This blog explores whether modern neural architectures can better follow these emotional trajectories. Rather than proposing a new architecture from scratch, we revisit three influential ideas in conversational emotion recognition—speaker-specific memory networks (CMN), long-context transformers (Transformer-XL), and emotion-anchored contrastive learning (EACL). Each addresses a different limitation in how models interpret emotional dynamics.
       </p>
       <p>
-        In this work, we ask whether modern neural architectures can follow these emotional trajectories more faithfully over time. Instead of introducing a completely new model, we revisit three influential ideas in conversational emotion recognition—speaker-specific memory networks (CMN), long-context transformers (Transformer-XL), and emotion-anchored contrastive learning (EACL). Each targets a different weakness in how current systems model emotional dynamics.
+        We reproduce all three models on the IEMOCAP benchmark and study where they excel and where they fall short, centered around a guiding question:
+        <strong>Can long-range context modeling and structured emotional representations be combined into a single, more interpretable system?</strong>
       </p>
       <p>
-        We reproduce all three models on the IEMOCAP benchmark and examine where they succeed and where they break down, with a central question in mind:
-        <strong>Can long-range context modeling and structured emotion representations be combined into a single, more interpretable architecture?</strong>
+        The sections that follow trace this investigation—from CMN’s limited short-term memory, to Transformer-XL’s ability to capture emotional buildup across long conversations, to EACL’s reshaping of the embedding space using learned emotion anchors. Along the way, we compare their behaviors side-by-side, highlight a few surprising patterns, and outline a hybrid approach that integrates their most promising ideas.
       </p>
-      <p>
-        The rest of this blog traces that question: from the limitations of CMN’s short-term memory, to Transformer-XL’s ability to track emotional build-up, to EACL’s reshaping of the embedding space via learned emotion anchors. Along the way, we contrast their behaviors, highlight a few unexpected patterns, and outline a hybrid design that merges the most effective ideas.
-      </p>
+
 
       <h2 id="problem">2. Problem Setup: Conversational Emotion Recognition</h2>
       <p>
