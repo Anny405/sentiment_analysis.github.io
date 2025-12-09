@@ -32,17 +32,10 @@
   <!--body -->
   <div class="page">
     <main class="content">
-      <!-- <h2 id="intro">1. Introduction</h2>
+      <h2>Why conversational emotion is hard</h2>
+      <p> Single-utterance emotion classification is already challenging, but conversational emotion recognition raises the difficulty in several important ways. Emotions in dialogue rarely appear in clean, self-contained sentences. A single utterance like <i>“It’s fine, whatever”</i> can express annoyance, resignation, or genuine agreement—its meaning depends almost entirely on the surrounding context and who said it. </p>
       <p>
-        Conversational emotion recognition goes far beyond assigning a label to a single sentence.
-        In real dialogue, emotions build up over many turns, depend on who is speaking, and often
-        blur the boundary between categories like <i>angry</i> and <i>frustrated</i>.
-        In this post, we revisit three influential ideas—speaker-specific memory networks,
-        long-context transformers, and emotion-anchored contrastive learning—and ask a simple question:
-        how can we combine them to better track subtle emotional dynamics in conversation?
-      </p> -->
-      <p>
-        Emotions in conversation rarely surface all at once. They build up over multiple turns, shift with speaker intent, and often blur the boundary between categories like frustration, annoyance, and sadness. Yet many emotion recognition systems still treat each utterance in isolation, largely ignoring the long-range dependencies and speaker-specific cues that shape how emotions emerge in dialogue.
+        That said, emotions in conversation rarely surface all at once. They build up over multiple turns, shift with speaker intent, and often blur the boundary between categories like frustration, annoyance, and sadness. Yet many emotion recognition systems still treat each utterance in isolation, largely ignoring the long-range dependencies and speaker-specific cues that shape how emotions emerge in dialogue.
       </p>
       <p>
         In this work, we ask whether modern neural architectures can follow these emotional trajectories more faithfully over time. Instead of introducing a completely new model, we revisit three influential ideas in conversational emotion recognition—speaker-specific memory networks (CMN), long-context transformers (Transformer-XL), and emotion-anchored contrastive learning (EACL). Each targets a different weakness in how current systems model emotional dynamics.
