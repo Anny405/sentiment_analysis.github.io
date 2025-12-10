@@ -5,7 +5,7 @@
 ----------------------------- */
 body {
   margin: 0;
-  padding: 0 12px;   /* 给整体左右留空隙 */
+  padding: 0;   /* 给整体左右留空隙 */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
                Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
                'Helvetica Neue', sans-serif;
@@ -85,7 +85,7 @@ a:hover {
 
   max-width: 1300px;
   margin: 0 auto;
-  padding: 64px 120px 96px;
+  padding: 64px 80px 96px 80px;
   box-sizing: border-box;
 }
 
