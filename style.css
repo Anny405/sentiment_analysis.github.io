@@ -49,6 +49,7 @@ a:hover {
   font-size: 40px;
   font-weight: 600;
   margin: 0 0 16px;
+   color: #ffffff !important;
 }
 
 .hero-subtitle {
