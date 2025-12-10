@@ -100,15 +100,26 @@
         is intended to promote both context stability across long conversations and clearer emotional
         boundaries in the embedding space.
       </p>
-
-      <h2 id="experiments">7. Experiments and Comparative Analysis</h2>
+      
+      <h2 id="new-insights">New insights: beyond individual architectures</h2>
       <p>
-        In our study, we reproduce CMN, Transformer-XL, and EACL on the IEMOCAP dataset and compare their
-        performance under a unified evaluation setup. We also analyze confusion matrices and embedding
-        visualizations to understand how each architecture handles similar emotion categories such as
-        <i>angry</i> vs. <i>frustrated</i>. Finally, we outline an evaluation protocol for the proposed
-        hybrid model, including metrics, cross-dataset tests, and speaker-independent splits.
+        Looking across CMN, Transformer-XL, and EACL, a consistent pattern emerges: conversational emotion recognition cannot be improved by treating context modeling and representation learning as separate problems. Each model addresses a different weakness, but their failure modes tend to cluster around the same “borderline” emotions, such as <i>frustration</i> versus <i>anger</i> or <i>excited</i> versus <i>happy</i>.
       </p>
+      <p>
+        CMN’s speaker-specific memory helps with short-range dependencies and identity cues, but its fixed window struggles once emotions build up slowly over many turns. Transformer-XL extends the effective context, capturing gradual emotional drift across a dialogue, yet its embedding space remains relatively unstructured, leading to confusion near fuzzy class boundaries. EACL, on the other hand, imposes a clean, anchor-based geometry on the emotion space, but operates with more limited context and has less direct access to long-range conversational dynamics.
+      </p>
+      <p>
+        Taken together, these observations suggest a more general insight: 
+        <strong>emotion in conversation is simultaneously a temporal and geometric phenomenon</strong>. 
+        Models need both a mechanism to follow how emotions evolve over time and a representation space where related emotions are close but still separable. This perspective motivates the hybrid architecture we propose later in the post, which combines Transformer-XL–style long-context recurrence with EACL’s emotion anchors and contrastive objectives to unify temporal stability with clearer emotional boundaries.
+      </p>
+
+
+
+
+
+
+
 
       <h2 id="conclusion">8. Discussion and Conclusion</h2>
       <p>
