@@ -105,26 +105,26 @@ a:hover { text-decoration: underline; }
 } */
 
 .page {
-  /* 让正文和 sidebar 在同一行 */
   display: grid;
-  /* 左边自适应，右边固定宽度 sidebar */
-  grid-template-columns: minmax(0, 3fr) 260px;
-  column-gap: 96px;             /* 中间留一点呼吸感 */
+  /* 左列：正文（自适应），右列：260px sidebar */
+  grid-template-columns: minmax(0, 4fr) 260px;
+  column-gap: 80px;
 
-  /* 整块往中间收，同时左右留大边距 */
-  max-width: 1400px;
+  /* 整块居中 + 左右大边距 */
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 56px 120px 80px;     /* 上-右-下-左：注意左右都是 120px */
+  /* 上 64 / 右 96 / 下 96 / 左 160 */
+  padding: 64px 96px 96px 160px;
 
   box-sizing: border-box;
 }
 
-/* 正文区：控制一下最大宽度，避免一行太长难读 */
+/* 正文列不要太宽，读起来更舒服 */
 .content {
-  max-width: 760px;             /* 类似 Google 文章正文宽度 */
+  max-width: 780px;
 }
 
-/* 右侧 sidebar 一直贴着右边那一列 */
+/* 右侧 sidebar 贴着右边那一列 */
 .sidebar {
   font-size: 14px;
   line-height: 1.6;
