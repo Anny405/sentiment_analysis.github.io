@@ -1,50 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Global font settings--Google Research style*/
+/* ----------------------------
+   Global
+----------------------------- */
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
                Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
                'Helvetica Neue', sans-serif;
   font-size: 17px;
   line-height: 1.6;
-  color: #1f2937;
-}
-
-/* ----------------------------
-   Global Page Layout
------------------------------ */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 
-               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: #202124;
   background-color: #ffffff;
-  line-height: 1.6;
 }
 
 a {
   color: #1a73e8;
   text-decoration: none;
 }
-a:hover { text-decoration: underline; }
+a:hover {
+  text-decoration: underline;
+}
 
 /* ----------------------------
-   HERO Section (Black top)
+   HERO (black top bar)
 ----------------------------- */
 .hero {
   background-color: #111111;
   color: #ffffff;
-  padding: 60px 24px;
+  padding: 56px 96px;
 }
 
 .hero-inner {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 32px;
+}
+
+.hero-text {
+  flex: 3 1 360px;
 }
 
 .hero-title {
@@ -65,10 +63,10 @@ a:hover { text-decoration: underline; }
 }
 
 .hero-image {
-  flex: 1 1 220px;
-  min-width: 200px;
+  flex: 2 1 260px;
+  min-width: 240px;
   background-color: #303134;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 12px;
   display: flex;
   align-items: center;
@@ -81,53 +79,33 @@ a:hover { text-decoration: underline; }
 }
 
 /* ----------------------------
-   Main Content Layout
+   Main content + sidebar grid
 ----------------------------- */
-/* .page {
-  max-width: 1100px;
-  margin: 32px auto 80px;
-  padding: 0 24px;
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
-}
-
-.content {
-  flex: 3 1 0;
-  min-width: 0;
-  max-width: 740px; /* 控制行宽，更好读 */
-}
-
-.sidebar {
-  flex: 1 1 260px;
-  min-width: 220px;
-  font-size: 14px;
-} */
 
 .page {
   display: grid;
-  /* 左列：正文（自适应），右列：260px sidebar */
-  grid-template-columns: minmax(0, 4fr) 260px;
+  grid-template-columns: minmax(0, 4fr) 260px;  /* main + sidebar */
   column-gap: 80px;
 
-  /* 整块居中 + 左右大边距 */
   max-width: 1300px;
   margin: 0 auto;
-  /* 上 64 / 右 96 / 下 96 / 左 160 */
-  padding: 64px 96px 96px 160px;
+  padding: 64px 120px 96px 120px;  /* symmetric horizontal padding */
 
   box-sizing: border-box;
 }
 
-/* 正文列不要太宽，读起来更舒服 */
+/* main column – keep line length comfortable */
 .content {
   max-width: 780px;
 }
 
-/* 右侧 sidebar 贴着右边那一列 */
+/* sticky sidebar on the right (desktop) */
 .sidebar {
   font-size: 14px;
   line-height: 1.6;
+  align-self: flex-start;
+  position: sticky;
+  top: 120px;  /* distance from top while scrolling */
 }
 
 /* Sidebar content */
@@ -177,7 +155,9 @@ p {
   color: #374151;
 }
 
-/* Figures (for your New Insights diagrams) */
+/* ----------------------------
+   Figures
+----------------------------- */
 .figure {
   margin: 32px 0;
   text-align: center;
@@ -198,38 +178,18 @@ p {
   font-style: italic;
 }
 
-/* ----------------------------
-   Responsive: mobile
------------------------------ */
-@media (max-width: 600px) {
-  .hero-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .page {
-    /* flex-direction: column; */
-    grid-template-columns: 1fr;
-    padding: 32px 24px 56px 24px;
-  }
-
-  .sidebar {
-    /* min-width: 0; */
-    margin-top: 40px;
-  }
-}
-
+/* make sure SVG images don't inherit weird blending */
 .svg-isolated {
   isolation: isolate;
   display: block;
 }
 
-/* -----------------------------------------
-   Highlighted section: KET module
------------------------------------------- */
+/* ----------------------------
+   KET highlight section
+----------------------------- */
 #ket {
   background: #f9fafb;
-  border-left: 4px solid #6366f1;  /* Indigo accent */
+  border-left: 4px solid #6366f1;  /* indigo accent */
   padding: 24px 28px;
   margin-top: 48px;
   margin-bottom: 48px;
@@ -238,14 +198,16 @@ p {
 
 #ket h2 {
   margin-top: 0;
-  color: #4f46e5;  /* Indigo-600 */
+  color: #4f46e5;
 }
 
 #ket ul li {
   margin-bottom: 8px;
 }
 
-/* Add spacing above Key Insights */
+/* ----------------------------
+   Key insights block
+----------------------------- */
 #key-insights {
   margin-top: 56px;
   padding: 24px 20px;
@@ -253,13 +215,11 @@ p {
   border-radius: 6px;
 }
 
-/* Key Insights title color */
 #key-insights h2 {
   margin-top: 0;
   color: #374151;
 }
 
-/* Key Insights list styling */
 #key-insights ol {
   padding-left: 20px;
 }
@@ -270,13 +230,37 @@ p {
   line-height: 1.5;
 }
 
-/* Slight emphasis on keywords inside Key Insights */
 #key-insights strong {
   color: #111827;
 }
 
-/* Extra spacing for clarity between major sections */
+/* spacing between major <section> blocks */
 section + section {
   margin-top: 48px;
 }
 
+/* ----------------------------
+   Responsive (mobile / tablet)
+----------------------------- */
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 40px 24px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page {
+    grid-template-columns: 1fr;      /* stack main + sidebar */
+    padding: 32px 24px 56px 24px;
+    row-gap: 40px;
+  }
+
+  .sidebar {
+    position: static;   /* no sticky on mobile */
+    top: auto;
+  }
+}
