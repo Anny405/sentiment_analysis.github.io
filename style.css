@@ -163,6 +163,9 @@ p {
   padding: 10px;
   border-radius: 8px;
 }
+.figure-img-png {
+  max-width: 520px;     /* 你可以再调成 500/480 看效果 */
+}
 
 .figure-caption {
   font-size: 13px;
@@ -180,12 +183,8 @@ p {
    KET highlight section
 ----------------------------- */
 #ket {
-  background: #f9fafb;
-  border-left: 4px solid #6366f1;
-  padding: 24px 28px;
   margin-top: 48px;
   margin-bottom: 48px;
-  border-radius: 6px;
 }
 
 #ket h2 {
