@@ -83,7 +83,7 @@ a:hover { text-decoration: underline; }
 /* ----------------------------
    Main Content Layout
 ----------------------------- */
-.page {
+/* .page {
   max-width: 1100px;
   margin: 32px auto 80px;
   padding: 0 24px;
@@ -102,6 +102,32 @@ a:hover { text-decoration: underline; }
   flex: 1 1 260px;
   min-width: 220px;
   font-size: 14px;
+} */
+
+.page {
+  /* 让正文和 sidebar 在同一行 */
+  display: grid;
+  /* 左边自适应，右边固定宽度 sidebar */
+  grid-template-columns: minmax(0, 3fr) 260px;
+  column-gap: 96px;             /* 中间留一点呼吸感 */
+
+  /* 整块往中间收，同时左右留大边距 */
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 56px 120px 80px;     /* 上-右-下-左：注意左右都是 120px */
+
+  box-sizing: border-box;
+}
+
+/* 正文区：控制一下最大宽度，避免一行太长难读 */
+.content {
+  max-width: 760px;             /* 类似 Google 文章正文宽度 */
+}
+
+/* 右侧 sidebar 一直贴着右边那一列 */
+.sidebar {
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 /* Sidebar content */
