@@ -5,7 +5,7 @@
 ----------------------------- */
 body {
   margin: 0;
-  padding: 0 24px;
+  padding: 0 24px;   /* 给整体左右留空隙 */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
                Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
                'Helvetica Neue', sans-serif;
@@ -81,34 +81,29 @@ a:hover {
 /* ----------------------------
    Main content + sidebar grid
 ----------------------------- */
-
 .page {
   display: grid;
-  grid-template-columns: minmax(0, 4fr) 260px;  /* main + sidebar */
+  grid-template-columns: minmax(0, 4fr) 260px; /* main + sidebar */
   column-gap: 80px;
 
   max-width: 1300px;
   margin: 0 auto;
-  padding: 64px 120px 96px 120px;  /* symmetric horizontal padding */
-
+  padding: 64px 120px 96px;
   box-sizing: border-box;
 }
 
-/* main column – keep line length comfortable */
 .content {
   max-width: 780px;
 }
 
-/* sticky sidebar on the right (desktop) */
 .sidebar {
   font-size: 14px;
   line-height: 1.6;
   align-self: flex-start;
   position: sticky;
-  top: 120px;  /* distance from top while scrolling */
+  top: 120px;
 }
 
-/* Sidebar content */
 .sidebar-title {
   font-weight: 600;
   margin-bottom: 8px;
@@ -163,19 +158,11 @@ p {
   text-align: center;
 }
 
-/* .figure-img {
-  width: 100%;
-  max-width: 900px;
-  border-radius: 10px;
-  background: #f3f4f6;
-  padding: 10px;
-} */
-
 .figure-img {
   width: 100%;
-  max-width: 640px;   /* 改小一点，比如 600–680 之间自己试 */
+  max-width: 640px;     /* 调整后更合理的展示尺寸 */
   height: auto;
-  margin: 0 auto;     /* 图片水平居中 */
+  margin: 0 auto;
   padding: 10px;
   border-radius: 8px;
 }
@@ -187,7 +174,6 @@ p {
   font-style: italic;
 }
 
-/* make sure SVG images don't inherit weird blending */
 .svg-isolated {
   isolation: isolate;
   display: block;
@@ -198,7 +184,7 @@ p {
 ----------------------------- */
 #ket {
   background: #f9fafb;
-  border-left: 4px solid #6366f1;  /* indigo accent */
+  border-left: 4px solid #6366f1;
   padding: 24px 28px;
   margin-top: 48px;
   margin-bottom: 48px;
@@ -243,7 +229,6 @@ p {
   color: #111827;
 }
 
-/* spacing between major <section> blocks */
 section + section {
   margin-top: 48px;
 }
@@ -251,8 +236,12 @@ section + section {
 /* ----------------------------
    Responsive (mobile / tablet)
 ----------------------------- */
-
 @media (max-width: 900px) {
+
+  body {
+    padding: 0 12px;    /* 手机端更窄的留白 */
+  }
+
   .hero {
     padding: 40px 24px;
   }
@@ -262,24 +251,14 @@ section + section {
     align-items: flex-start;
   }
 
-  /* .page {
-    grid-template-columns: 1fr;      /* stack main + sidebar */
-    padding: 32px 24px 56px 24px;
-    row-gap: 40px;
-  } */
-
-  body {
-    padding: 0 12px;
-  }
-
   .page {
-    grid-template-columns: 1fr;
-    padding: 32px 24px 56px 24px;
+    grid-template-columns: 1fr;   /* 主内容 + 侧栏堆叠 */
+    padding: 32px 24px 56px;
     row-gap: 40px;
   }
 
   .sidebar {
-    position: static;   /* no sticky on mobile */
+    position: static;
     top: auto;
   }
 }
