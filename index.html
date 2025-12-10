@@ -114,7 +114,19 @@
     sentiment words. KET is our attempt to address this gap by bringing external
     knowledge into the model.
   </p>
+  <div class="figure">
+  <img src="images/ket_architecture.png"
+       alt="Knowledge-Enriched Transformer architecture"
+       class="figure-img svg-isolated">
 
+  <p class="figure-caption">
+    <strong>Figure X.</strong>
+    Architecture of the Knowledge-Enriched Transformer (KET).  
+    The model integrates word embeddings with concept representations obtained from an external
+    knowledge base (ConceptNet + NRC-VAD). A dynamic affective graph attention layer fuses these
+    signals before feeding them into multi-head self-attention and cross-attention modules.
+  </p>
+</div>
   <h3>What KET Adds</h3>
   <ul>
     <li><strong>Commonsense knowledge (ConceptNet):</strong> connects words to the kinds
