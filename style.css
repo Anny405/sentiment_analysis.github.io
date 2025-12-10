@@ -223,3 +223,60 @@ p {
   isolation: isolate;
   display: block;
 }
+
+/* -----------------------------------------
+   Highlighted section: KET module
+------------------------------------------ */
+#ket {
+  background: #f9fafb;
+  border-left: 4px solid #6366f1;  /* Indigo accent */
+  padding: 24px 28px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  border-radius: 6px;
+}
+
+#ket h2 {
+  margin-top: 0;
+  color: #4f46e5;  /* Indigo-600 */
+}
+
+#ket ul li {
+  margin-bottom: 8px;
+}
+
+/* Add spacing above Key Insights */
+#key-insights {
+  margin-top: 56px;
+  padding: 24px 20px;
+  background: #f3f4f6;
+  border-radius: 6px;
+}
+
+/* Key Insights title color */
+#key-insights h2 {
+  margin-top: 0;
+  color: #374151;
+}
+
+/* Key Insights list styling */
+#key-insights ol {
+  padding-left: 20px;
+}
+
+#key-insights ol li {
+  padding-left: 4px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* Slight emphasis on keywords inside Key Insights */
+#key-insights strong {
+  color: #111827;
+}
+
+/* Extra spacing for clarity between major sections */
+section + section {
+  margin-top: 48px;
+}
+
