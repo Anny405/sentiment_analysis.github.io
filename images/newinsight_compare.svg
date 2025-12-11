@@ -9,7 +9,7 @@
   <rect x="0" y="0" width="900" height="260" fill="#f9fafb"/>
 
   <!-- 左：No anchors -->
-  <rect x="60" y="40" width="360" height="200" rx="12" ry="12" fill="#ffffff" stroke="#e5e7eb"/>
+  <rect x="60" y="40" width="350" height="200" rx="12" ry="12" fill="#ffffff" stroke="#e5e7eb"/>
   <text x="220" y="60" text-anchor="middle" class="title">Before: no emotion anchors</text>
   <text x="220" y="78" text-anchor="middle" class="caption">Similar emotions overlap in embedding space</text>
 
@@ -38,7 +38,7 @@
   <text x="175" y="220" class="label">Angry / Frustrated</text>
 
   <!-- right：With anchors -->
-  <rect x="480" y="40" width="320" height="180" rx="12" ry="12" fill="#ffffff" stroke="#e5e7eb"/>
+  <rect x="480" y="40" width="350" height="200" rx="12" ry="12" fill="#ffffff" stroke="#e5e7eb"/>
   <text x="640" y="60" text-anchor="middle" class="title">After: emotion anchors + contrastive loss</text>
   <text x="640" y="78" text-anchor="middle" class="caption">Clusters pulled toward anchors, boundaries clearer</text>
 
