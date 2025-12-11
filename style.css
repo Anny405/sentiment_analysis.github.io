@@ -180,8 +180,10 @@ p {
 }
 
 #ket {
-  margin-top: 48px;
-  margin-bottom: 48px;
+  border: 1.5px dashed #cbd5e1;   /* cool gray dashed outline */
+  padding: 28px;
+  border-radius: 6px;
+  background: #ffffff;
 }
 
 #ket h2 {
