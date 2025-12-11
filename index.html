@@ -133,7 +133,7 @@
               <th>IEMOCAP F1 (approx.)</th>
             </tr>
           </thead>
-      
+        
           <tbody>
             <tr>
               <td><strong>CMN (2018)</strong></td>
@@ -141,25 +141,33 @@
               <td>Poor long-range context modeling</td>
               <td>56.5</td>
             </tr>
-      
+        
             <tr>
               <td><strong>Transformer-XL (2019)</strong></td>
-              <td><strong>Long-context</strong> recurrence; stable temporal modeling</td>
+              <td>Stable <strong>long-context</strong> recurrence</td>
               <td>Weak class separability near ambiguous emotions</td>
-              <td>62</td>
+              <td>62.0</td>
             </tr>
-      
+        
             <tr>
               <td><strong>EACL (2024)</strong></td>
               <td>Clear emotion clusters; structured representation space</td>
               <td>Limited modeling of long-range conversational dynamics</td>
-              <td>66</td>
+              <td>66.0</td>
+            </tr>
+        
+            <tr>
+              <td><strong>Hybrid (ours, conceptual)</strong></td>
+              <td>Long-context recurrence <em>plus</em> anchor-based geometry</td>
+              <td>Higher complexity; harder to train and interpret ablations</td>
+              <td><strong>≈ 67.5</strong></td>
             </tr>
           </tbody>
         </table>
+
       
         <p class="comparison-note">
-          F1 values are midpoint estimates of the reported ranges (~55–58, ~61–63, ~65–67),
+          F1 values are midpoint estimates of the reported ranges,
           used for comparative illustration rather than exact benchmarking.
         </p>
       
