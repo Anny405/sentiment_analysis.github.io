@@ -113,7 +113,51 @@
 
 
 
-      
+      <section id="ket">
+  <h2>Knowledge-Enriched Transformer (KET)</h2>
+  <p>
+    While CMN, Transformer-XL, and EACL all operate purely on text, real conversations
+    often express emotions indirectly through events and situations rather than explicit
+    sentiment words. KET is our attempt to address this gap by bringing external
+    knowledge into the model.
+  </p>
+  <div class="figure">
+  <img src="images/KET_architecture.png"
+       alt="Knowledge-Enriched Transformer architecture"
+       class="figure-img figure-img-png svg-isolated">
+
+  <p class="figure-caption">
+    <strong>Figure 3.</strong>
+    Architecture of the Knowledge-Enriched Transformer (KET).  
+    The model integrates word embeddings with concept representations obtained from an external
+    knowledge base (ConceptNet + NRC-VAD). A dynamic affective graph attention layer fuses these
+    signals before feeding them into multi-head self-attention and cross-attention modules.
+  </p>
+</div>
+  <h3>What KET Adds</h3>
+  <ul>
+    <li><strong>Commonsense knowledge (ConceptNet):</strong> connects words to the kinds
+      of events and situations people usually associate with emotions
+      (e.g., <em>funeral → sadness</em>, <em>celebration → joy</em>).</li>
+    <li><strong>Affective signals (NRC-VAD):</strong> gives each word continuous scores
+      for valence, arousal, and dominance, so the model has a sense of how positive,
+      intense, or controlling a word feels.</li>
+    <li><strong>Knowledge-enriched representations:</strong> these signals are injected
+      into the token embeddings before the transformer layers, so attention is computed
+      over a space that already encodes emotional structure, not just raw text.</li>
+  </ul>
+
+  <h3>Why It Helps</h3>
+  <ul>
+    <li>Makes it easier to recognize emotions that are implied rather than stated
+      directly.</li>
+    <li>Improves performance on subtle or minority emotion classes, such as
+      <em>fear</em> and <em>disgust</em>.</li>
+    <li>Acts as an add-on module that can sit on top of CMN, Transformer-XL, or EACL,
+      rather than replacing them.</li>
+  </ul>
+</section>
+
       
       <h2 id="new-insights">New Insights: Beyond Individual Architectures</h2>
       <p>
@@ -169,50 +213,6 @@
         </p>
       </div>
     
-  <section id="ket">
-  <h2>Knowledge-Enriched Transformer (KET)</h2>
-  <p>
-    While CMN, Transformer-XL, and EACL all operate purely on text, real conversations
-    often express emotions indirectly through events and situations rather than explicit
-    sentiment words. KET is our attempt to address this gap by bringing external
-    knowledge into the model.
-  </p>
-  <div class="figure">
-  <img src="images/KET_architecture.png"
-       alt="Knowledge-Enriched Transformer architecture"
-       class="figure-img figure-img-png svg-isolated">
-
-  <p class="figure-caption">
-    <strong>Figure 3.</strong>
-    Architecture of the Knowledge-Enriched Transformer (KET).  
-    The model integrates word embeddings with concept representations obtained from an external
-    knowledge base (ConceptNet + NRC-VAD). A dynamic affective graph attention layer fuses these
-    signals before feeding them into multi-head self-attention and cross-attention modules.
-  </p>
-</div>
-  <h3>What KET Adds</h3>
-  <ul>
-    <li><strong>Commonsense knowledge (ConceptNet):</strong> connects words to the kinds
-      of events and situations people usually associate with emotions
-      (e.g., <em>funeral → sadness</em>, <em>celebration → joy</em>).</li>
-    <li><strong>Affective signals (NRC-VAD):</strong> gives each word continuous scores
-      for valence, arousal, and dominance, so the model has a sense of how positive,
-      intense, or controlling a word feels.</li>
-    <li><strong>Knowledge-enriched representations:</strong> these signals are injected
-      into the token embeddings before the transformer layers, so attention is computed
-      over a space that already encodes emotional structure, not just raw text.</li>
-  </ul>
-
-  <h3>Why It Helps</h3>
-  <ul>
-    <li>Makes it easier to recognize emotions that are implied rather than stated
-      directly.</li>
-    <li>Improves performance on subtle or minority emotion classes, such as
-      <em>fear</em> and <em>disgust</em>.</li>
-    <li>Acts as an add-on module that can sit on top of CMN, Transformer-XL, or EACL,
-      rather than replacing them.</li>
-  </ul>
-</section>
 
 <section id="key-insights">
   <h2>Key Insights</h2>
@@ -228,8 +228,6 @@
       interpret implicit or ambiguous emotions, especially for the harder classes.</li>
   </ol>
 </section>
-
-
 
 
 
