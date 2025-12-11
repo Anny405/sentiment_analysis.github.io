@@ -122,45 +122,45 @@ a:hover {
 /* -----------------------------------------
    Academic-style Comparative Table
 ------------------------------------------ */
-.comparison-section {
-  margin-top: 56px;
+#comparative h2 {
+  /* 使用文章默认 h2 样式，因此保持一致 */
+  font-size: 26px;
+  font-weight: 600;
+  color: #111827;
+  margin-top: 40px;
+  margin-bottom: 12px;
 }
 
-.comparison-title {
-  text-align: center;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: #111827;
+/* 让内容段落靠近一点 */
+#comparative p {
+  margin-top: 8px;
+  margin-bottom: 12px;
 }
 
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 15px;
+  font-size: 14px;          /* 更小字体 */
+  line-height: 1.3;         /* 行距变紧 */
 }
 
 .comparison-table th,
 .comparison-table td {
-  border: 1px solid #d1d5db;    /* 论文风：浅灰边框 */
-  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  padding: 6px 8px;         /* 从 10px 缩到 6px，大幅减少高度 */
   text-align: left;
   vertical-align: top;
 }
 
 .comparison-table th {
   font-weight: 600;
-  background: #f9fafb;        /* VERY light gray 表头 */
-}
-
-.comparison-table td strong {
-  font-weight: 600;
+  background: #f9fafb;
 }
 
 .comparison-note {
-  font-size: 13px;
+  font-size: 12px;
+  margin-top: 4px;
   color: #6b7280;
-  margin-top: 6px;
   font-style: italic;
 }
 
